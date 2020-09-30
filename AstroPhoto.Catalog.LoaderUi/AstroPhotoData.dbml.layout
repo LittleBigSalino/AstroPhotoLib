@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AstroPhotoData">
+  <DataContextMoniker Name="/AstroPhotoDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5c6c7c8b-39a7-4ddd-a2bf-1b14207ff209" absoluteBounds="1.125, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AstroPhotoDataDataContext/Image" />
+      <nestedChildShapes>
+        <elementListCompartment Id="702703c2-95b0-4f5a-9758-90cc6d7ec5aa" absoluteBounds="1.1400000000000001, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db8c7d28-c6af-4fce-98e5-f58b522906f9" absoluteBounds="4.875, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AstroPhotoDataDataContext/ImageType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd2a5f04-0427-4395-85ad-9441aad73b3f" absoluteBounds="4.89, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 1.31814697265625); (3.125 : 1.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AstroPhotoDataDataContext/ImageType/ImageType_Image" />
+      <nodes>
+        <classShapeMoniker Id="db8c7d28-c6af-4fce-98e5-f58b522906f9" />
+        <classShapeMoniker Id="5c6c7c8b-39a7-4ddd-a2bf-1b14207ff209" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f384379a-3306-44f7-aee5-aa20e5e5a5c2" absoluteBounds="4.875, 3.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AstroPhotoDataDataContext/Project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9338d087-7dac-4b8b-b24a-78f9f098d6e0" absoluteBounds="4.89, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 4.44314697265625); (2.125 : 4.44314697265625); (2.125 : 2.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AstroPhotoDataDataContext/Project/Project_Image" />
+      <nodes>
+        <classShapeMoniker Id="f384379a-3306-44f7-aee5-aa20e5e5a5c2" />
+        <classShapeMoniker Id="5c6c7c8b-39a7-4ddd-a2bf-1b14207ff209" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a75469ec-15b2-4712-af68-36588cbe814d" absoluteBounds="4.875, 2.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AstroPhotoDataDataContext/Session" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45bbc774-6684-4fd0-b48c-44e820980588" absoluteBounds="4.89, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 2.41909912109375); (3.125 : 2.41909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AstroPhotoDataDataContext/Session/Session_Image" />
+      <nodes>
+        <classShapeMoniker Id="a75469ec-15b2-4712-af68-36588cbe814d" />
+        <classShapeMoniker Id="5c6c7c8b-39a7-4ddd-a2bf-1b14207ff209" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
