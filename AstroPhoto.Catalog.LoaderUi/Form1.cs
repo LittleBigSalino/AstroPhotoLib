@@ -1,9 +1,10 @@
-﻿using AstroPhoto.Catalog.LoaderUi.AstrophotoDataSetTableAdapters;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,21 +36,21 @@ namespace AstroPhoto.Catalog.LoaderUi
             APImageTypes = (from x in dc.ImageTypes
                             select x).ToList();
             dataGridViewImageTypes.DataSource = APImageTypes;           
-            comboBoxImageTypes.DataSource = APImageTypes;
-            comboBoxImageTypes.DisplayMember = "Name";
+            //comboBoxImageTypes.DataSource = APImageTypes;
+            //comboBoxImageTypes.DisplayMember = "Name";
             APImages = (from x in dc.Images
                         select x).ToList();
             dataGridViewImages.DataSource = APImages;
             APProjects = (from x in dc.Projects
                           select x).ToList();
             dataGridViewProjects.DataSource = APProjects;
-            comboBoxSelectProject.DataSource = APProjects;
-            comboBoxSelectProject.DisplayMember = "Name";
+            //comboBoxSelectProject.DataSource = APProjects;
+            //comboBoxSelectProject.DisplayMember = "Name";
             APSessions = (from x in dc.Sessions
                           select x).ToList();
             dataGridViewSessions.DataSource = APSessions;
-            comboBoxSelectSession.DataSource = APSessions;
-            comboBoxSelectSession.DisplayMember = "SessionLabel";
+            //comboBoxSelectSession.DataSource = APSessions;
+            //comboBoxSelectSession.DisplayMember = "SessionLabel";
         }
 
         private void AutoAddSessionNow(AstroPhotoDataDataContext dc)
@@ -116,14 +117,49 @@ namespace AstroPhoto.Catalog.LoaderUi
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+ 
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(textBoxNewProjectName.Text))
+            if(openFileDialogAddNewFiles.ShowDialog()==DialogResult.OK)
             {
-                AddProjectByName(textBoxNewProjectName.Text, apdc);
-                textBoxNewProjectName.Text = "";
+                List<FileInfo> fileList = new List<FileInfo>();
+                List<String> paths = openFileDialogAddNewFiles.FileNames.ToList();
+                if(paths.Count<1)
+                {
+                    return;
+                }
+                foreach(String x in paths)
+                {
+                    FileInfo fileToAdd = new FileInfo(x);
+                    fileList.Add(fileToAdd);
+                }
+
+                //Image imageToAdd = new Image()
+                //{
+                //    ImageTypeId = (comboBoxImageTypes.SelectedItem as ImageType).ImageTypeId,
+                //    ProjectId = (comboBoxSelectProject.SelectedItem as Project).ProjectId,
+                //    SessionId = (comboBoxSelectSession.SelectedItem as Session).SessionId,
+                //    FilePath = fileList[0].FullName,
+                //    DateAdded = DateTime.Now
+                //};
+                //apdc.Images.InsertOnSubmit(imageToAdd);
+                //apdc.SubmitChanges();
             }
-            
+        }
+
+        private void buttonShowAddDataDlg_Click(object sender, EventArgs e)
+        {
+            FormAddData newAddDataDlg = new FormAddData(apdc);
+            if(newAddDataDlg.ShowDialog()==DialogResult.OK)
+            {
+
+                MessageBox.Show("Something was added");
+            }
+            else
+            {
+
+            }
         }
     }
 }
