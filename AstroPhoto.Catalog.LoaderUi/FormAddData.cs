@@ -7,18 +7,31 @@ using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AstroPhoto.Catalog.LoaderUi
 {
+    
 
     public partial class FormAddData : Form
     {
+        public const String IMAGETYPE = "ImageType";
+        public const String TARGET = "Target";
+        public const String DURATION = "Duration";
+        public const String TEMP = "Temperature";
+        public const String ISO = "ISO";
+        public const String SEQUENCENUMBER = "SequenceNumber";
+        public const String SESSIONDATE = "SessionDate";
+        public const String CREATEDDATETIME = "CreatedDateTime";        
+
+
         private List<FileInfo> GetFiles(String path)
         {
             List<FileInfo> retVal = new List<FileInfo>();
-            List<String> filesInThisDir = Directory.GetFiles(path).ToList();
+            List<String> filesInThisDir = Directory.GetFiles(path,"*.cr2").ToList();
             foreach (String x in filesInThisDir)
             {
                 FileInfo fiItemToAdd = new FileInfo(x);
@@ -35,6 +48,10 @@ namespace AstroPhoto.Catalog.LoaderUi
             }
             return retVal;
         }
+
+
+
+
 
         private int addOneImageAutoImportByFileName(String fileName)
         {
@@ -70,13 +87,18 @@ namespace AstroPhoto.Catalog.LoaderUi
 
             return 0;
         }
+
         public AstroPhotoDataDataContext ADC{ get; set; }
         public String RootPath { get; set; }
+
+        public AstroData APData { get; set; }
         public List<FileInfo> NewFileInfosBuffer { get; set; }
         public List<Image> NewFilesBuffer { get; set; }
         public FormAddData()
         {
             InitializeComponent();
+            APData = new AstroData();
+
         }
 
         public FormAddData(AstroPhotoDataDataContext adc)
@@ -98,6 +120,7 @@ namespace AstroPhoto.Catalog.LoaderUi
             comboBoxProjects.DisplayMember = "Name";
             comboBoxSession.DataSource = sessions;
             comboBoxSession.DisplayMember = "SessionLabel";
+            APData = new AstroData();
         }
 
         private void buttonBrowseForNewData_Click(object sender, EventArgs e)
@@ -124,16 +147,30 @@ namespace AstroPhoto.Catalog.LoaderUi
 
         private void buttonFolderBrowserImport_Click(object sender, EventArgs e)
         {
+            try
+            {
+                progressBarLoadDataTime.Value = 0;
             if(folderBrowserDialogImport.ShowDialog()==DialogResult.OK)
                 {
                 ///// Parse and Import directory.
                 this.RootPath = folderBrowserDialogImport.SelectedPath;
                 NewFileInfosBuffer = GetFiles(this.RootPath);
+                MessageBox.Show("New FileInfos Buffer count is " + NewFileInfosBuffer.Count);
                 if(checkBoxAutoEverything.Checked==true)
                 {
-                    foreach(FileInfo x in NewFileInfosBuffer)
+                    int progressTracker = 0;
+                        int total = NewFileInfosBuffer.Count;
+                        
+                        foreach (FileInfo x in NewFileInfosBuffer)
                     {
-                        int retVal = addOneImageAutoImportByFileName(NewFileInfosBuffer[0].FullName);                       
+                        int donePct = progressTracker / total * 100;
+                            progressBarLoadDataTime.Value = donePct;
+                        Image retValStub = APData.ParseFileNameToImageInfo(x.FullName, ADC);
+                        if(retValStub!=null)
+                        {
+                            APData.AddImage(retValStub, ADC);                            
+                        }
+                            progressTracker++;
                     }
                     
                 }
@@ -142,6 +179,11 @@ namespace AstroPhoto.Catalog.LoaderUi
             else
             {
                 return;
+            }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
             }
         }
     }

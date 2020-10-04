@@ -56,11 +56,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNewImageTypeLabel = new System.Windows.Forms.TextBox();
             this.tabPageAddImages = new System.Windows.Forms.TabPage();
+            this.checkBoxAutoEverything = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonFolderBrowserImport = new System.Windows.Forms.Button();
             this.openFileDialogAddFile = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialogImport = new System.Windows.Forms.FolderBrowserDialog();
-            this.checkBoxAutoEverything = new System.Windows.Forms.CheckBox();
+            this.progressBarLoadDataTime = new System.Windows.Forms.ProgressBar();
             this.tabControlAddItems.SuspendLayout();
             this.tabPageAddProject.SuspendLayout();
             this.tabPageAddSession.SuspendLayout();
@@ -336,6 +337,7 @@
             // 
             // tabPageAddImages
             // 
+            this.tabPageAddImages.Controls.Add(this.progressBarLoadDataTime);
             this.tabPageAddImages.Controls.Add(this.checkBoxAutoEverything);
             this.tabPageAddImages.Controls.Add(this.label6);
             this.tabPageAddImages.Controls.Add(this.buttonFolderBrowserImport);
@@ -345,6 +347,16 @@
             this.tabPageAddImages.TabIndex = 5;
             this.tabPageAddImages.Text = "Add Multiple Image";
             this.tabPageAddImages.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAutoEverything
+            // 
+            this.checkBoxAutoEverything.AutoSize = true;
+            this.checkBoxAutoEverything.Location = new System.Drawing.Point(209, 101);
+            this.checkBoxAutoEverything.Name = "checkBoxAutoEverything";
+            this.checkBoxAutoEverything.Size = new System.Drawing.Size(101, 17);
+            this.checkBoxAutoEverything.TabIndex = 2;
+            this.checkBoxAutoEverything.Text = "Auto Everything";
+            this.checkBoxAutoEverything.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -369,15 +381,12 @@
             // 
             this.openFileDialogAddFile.Title = "Add a file";
             // 
-            // checkBoxAutoEverything
+            // progressBarLoadDataTime
             // 
-            this.checkBoxAutoEverything.AutoSize = true;
-            this.checkBoxAutoEverything.Location = new System.Drawing.Point(209, 101);
-            this.checkBoxAutoEverything.Name = "checkBoxAutoEverything";
-            this.checkBoxAutoEverything.Size = new System.Drawing.Size(101, 17);
-            this.checkBoxAutoEverything.TabIndex = 2;
-            this.checkBoxAutoEverything.Text = "Auto Everything";
-            this.checkBoxAutoEverything.UseVisualStyleBackColor = true;
+            this.progressBarLoadDataTime.Location = new System.Drawing.Point(63, 335);
+            this.progressBarLoadDataTime.Name = "progressBarLoadDataTime";
+            this.progressBarLoadDataTime.Size = new System.Drawing.Size(411, 23);
+            this.progressBarLoadDataTime.TabIndex = 3;
             // 
             // FormAddData
             // 
@@ -438,5 +447,6 @@
         private System.Windows.Forms.Button buttonFolderBrowserImport;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogImport;
         private System.Windows.Forms.CheckBox checkBoxAutoEverything;
+        private System.Windows.Forms.ProgressBar progressBarLoadDataTime;
     }
 }

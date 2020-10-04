@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AstroPhotoData">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="AstroPhotoData">
   <DataContextMoniker Name="/AstroPhotoDataDataContext" />
   <nestedChildShapes>
     <classShape Id="5c6c7c8b-39a7-4ddd-a2bf-1b14207ff209" absoluteBounds="1.125, 0.75, 2, 1.9631982421875">
@@ -47,5 +47,11 @@
         <classShapeMoniker Id="5c6c7c8b-39a7-4ddd-a2bf-1b14207ff209" />
       </nodes>
     </associationConnector>
+    <classShape Id="cf77695c-8b8c-4736-983f-185d7040c37c" absoluteBounds="1.5, 6.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AstroPhotoDataDataContext/ImagesView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bc38a4d-3bd3-431f-803f-1d6d405a87d2" absoluteBounds="1.5149999999999997, 6.9600000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

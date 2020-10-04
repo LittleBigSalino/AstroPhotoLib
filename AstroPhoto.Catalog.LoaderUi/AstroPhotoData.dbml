@@ -37,4 +37,14 @@
       <Association Name="Session_Image" Member="Images" ThisKey="SessionId" OtherKey="SessionId" Type="Image" />
     </Type>
   </Table>
+  <Table Name="dbo.View_Image_Deref" Member="ImagesViews">
+    <Type Name="ImagesView">
+      <Column Name="ImageId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SessionLabel" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

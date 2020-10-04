@@ -18,7 +18,7 @@ namespace AstroPhoto.Catalog.LoaderUi
         public List<Image> APImages { get; set; }
         public List<Project> APProjects { get; set; }
         public List<Session> APSessions { get; set; }
-
+        public List<ImagesView> IV { get; set; }
         public AstroPhotoDataDataContext apdc { get; set; }
         public FormCatalogFunctionsDriver()
         {
@@ -28,19 +28,29 @@ namespace AstroPhoto.Catalog.LoaderUi
         private void buttonConnectToDb_Click(object sender, EventArgs e)
         {
             apdc = new AstroPhotoDataDataContext();
-            LoadProps(apdc);
+            try
+            {
+                LoadProps(apdc);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void LoadProps(AstroPhotoDataDataContext dc)
         {
             APImageTypes = (from x in dc.ImageTypes
                             select x).ToList();
-            dataGridViewImageTypes.DataSource = APImageTypes;           
+            dataGridViewImageTypes.DataSource = APImageTypes;
             //comboBoxImageTypes.DataSource = APImageTypes;
             //comboBoxImageTypes.DisplayMember = "Name";
-            APImages = (from x in dc.Images
-                        select x).ToList();
-            dataGridViewImages.DataSource = APImages;
+            //APImages = (from x in dc.Images
+            //            select x).ToList();
+            IV = dc.ImagesViews.ToList();
+                        
+            dataGridViewImages.DataSource = IV;
             APProjects = (from x in dc.Projects
                           select x).ToList();
             dataGridViewProjects.DataSource = APProjects;
@@ -89,6 +99,8 @@ namespace AstroPhoto.Catalog.LoaderUi
             }
             
         }
+
+        
 
         private void AddImageFile(String path, int imageTypeId, int projectId, int sessionId, AstroPhotoDataDataContext dc)
         {

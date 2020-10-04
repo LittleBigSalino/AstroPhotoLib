@@ -30,6 +30,7 @@
         {
             this.buttonConnectToDb = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonShowAddDataDlg = new System.Windows.Forms.Button();
             this.tabControlViewData = new System.Windows.Forms.TabControl();
             this.tabPageImageTypes = new System.Windows.Forms.TabPage();
             this.dataGridViewImageTypes = new System.Windows.Forms.DataGridView();
@@ -40,7 +41,6 @@
             this.tabPageSessions = new System.Windows.Forms.TabPage();
             this.dataGridViewSessions = new System.Windows.Forms.DataGridView();
             this.openFileDialogAddNewFiles = new System.Windows.Forms.OpenFileDialog();
-            this.buttonShowAddDataDlg = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControlViewData.SuspendLayout();
             this.tabPageImageTypes.SuspendLayout();
@@ -78,105 +78,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(630, 414);
+            this.groupBox1.Size = new System.Drawing.Size(1184, 819);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select an action or command";
-            // 
-            // tabControlViewData
-            // 
-            this.tabControlViewData.Controls.Add(this.tabPageImageTypes);
-            this.tabControlViewData.Controls.Add(this.tabPageImages);
-            this.tabControlViewData.Controls.Add(this.tabPageProjects);
-            this.tabControlViewData.Controls.Add(this.tabPageSessions);
-            this.tabControlViewData.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControlViewData.Location = new System.Drawing.Point(0, 75);
-            this.tabControlViewData.Name = "tabControlViewData";
-            this.tabControlViewData.SelectedIndex = 0;
-            this.tabControlViewData.Size = new System.Drawing.Size(630, 339);
-            this.tabControlViewData.TabIndex = 2;
-            // 
-            // tabPageImageTypes
-            // 
-            this.tabPageImageTypes.Controls.Add(this.dataGridViewImageTypes);
-            this.tabPageImageTypes.Location = new System.Drawing.Point(4, 22);
-            this.tabPageImageTypes.Name = "tabPageImageTypes";
-            this.tabPageImageTypes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageImageTypes.Size = new System.Drawing.Size(622, 313);
-            this.tabPageImageTypes.TabIndex = 0;
-            this.tabPageImageTypes.Text = "Image Types";
-            this.tabPageImageTypes.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewImageTypes
-            // 
-            this.dataGridViewImageTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewImageTypes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewImageTypes.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewImageTypes.Name = "dataGridViewImageTypes";
-            this.dataGridViewImageTypes.Size = new System.Drawing.Size(616, 307);
-            this.dataGridViewImageTypes.TabIndex = 0;
-            // 
-            // tabPageImages
-            // 
-            this.tabPageImages.Controls.Add(this.dataGridViewImages);
-            this.tabPageImages.Location = new System.Drawing.Point(4, 22);
-            this.tabPageImages.Name = "tabPageImages";
-            this.tabPageImages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageImages.Size = new System.Drawing.Size(622, 313);
-            this.tabPageImages.TabIndex = 1;
-            this.tabPageImages.Text = "Images";
-            this.tabPageImages.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewImages
-            // 
-            this.dataGridViewImages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewImages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewImages.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewImages.Name = "dataGridViewImages";
-            this.dataGridViewImages.Size = new System.Drawing.Size(616, 307);
-            this.dataGridViewImages.TabIndex = 1;
-            // 
-            // tabPageProjects
-            // 
-            this.tabPageProjects.Controls.Add(this.dataGridViewProjects);
-            this.tabPageProjects.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProjects.Name = "tabPageProjects";
-            this.tabPageProjects.Size = new System.Drawing.Size(622, 313);
-            this.tabPageProjects.TabIndex = 2;
-            this.tabPageProjects.Text = "Projects";
-            this.tabPageProjects.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewProjects
-            // 
-            this.dataGridViewProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewProjects.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewProjects.Name = "dataGridViewProjects";
-            this.dataGridViewProjects.Size = new System.Drawing.Size(622, 313);
-            this.dataGridViewProjects.TabIndex = 1;
-            // 
-            // tabPageSessions
-            // 
-            this.tabPageSessions.Controls.Add(this.dataGridViewSessions);
-            this.tabPageSessions.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSessions.Name = "tabPageSessions";
-            this.tabPageSessions.Size = new System.Drawing.Size(622, 313);
-            this.tabPageSessions.TabIndex = 3;
-            this.tabPageSessions.Text = "Sessions";
-            this.tabPageSessions.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewSessions
-            // 
-            this.dataGridViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSessions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewSessions.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewSessions.Name = "dataGridViewSessions";
-            this.dataGridViewSessions.Size = new System.Drawing.Size(622, 313);
-            this.dataGridViewSessions.TabIndex = 1;
-            // 
-            // openFileDialogAddNewFiles
-            // 
-            this.openFileDialogAddNewFiles.FileName = "openFileDialog1";
             // 
             // buttonShowAddDataDlg
             // 
@@ -189,11 +94,116 @@
             this.buttonShowAddDataDlg.UseVisualStyleBackColor = true;
             this.buttonShowAddDataDlg.Click += new System.EventHandler(this.buttonShowAddDataDlg_Click);
             // 
+            // tabControlViewData
+            // 
+            this.tabControlViewData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlViewData.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControlViewData.Controls.Add(this.tabPageImageTypes);
+            this.tabControlViewData.Controls.Add(this.tabPageImages);
+            this.tabControlViewData.Controls.Add(this.tabPageProjects);
+            this.tabControlViewData.Controls.Add(this.tabPageSessions);
+            this.tabControlViewData.Location = new System.Drawing.Point(0, 93);
+            this.tabControlViewData.Multiline = true;
+            this.tabControlViewData.Name = "tabControlViewData";
+            this.tabControlViewData.SelectedIndex = 0;
+            this.tabControlViewData.Size = new System.Drawing.Size(1185, 726);
+            this.tabControlViewData.TabIndex = 2;
+            // 
+            // tabPageImageTypes
+            // 
+            this.tabPageImageTypes.Controls.Add(this.dataGridViewImageTypes);
+            this.tabPageImageTypes.Location = new System.Drawing.Point(4, 25);
+            this.tabPageImageTypes.Name = "tabPageImageTypes";
+            this.tabPageImageTypes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageImageTypes.Size = new System.Drawing.Size(1177, 697);
+            this.tabPageImageTypes.TabIndex = 0;
+            this.tabPageImageTypes.Text = "Image Types";
+            this.tabPageImageTypes.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewImageTypes
+            // 
+            this.dataGridViewImageTypes.AllowUserToAddRows = false;
+            this.dataGridViewImageTypes.AllowUserToDeleteRows = false;
+            this.dataGridViewImageTypes.AllowUserToOrderColumns = true;
+            this.dataGridViewImageTypes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewImageTypes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewImageTypes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewImageTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewImageTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewImageTypes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewImageTypes.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewImageTypes.Name = "dataGridViewImageTypes";
+            this.dataGridViewImageTypes.Size = new System.Drawing.Size(1171, 691);
+            this.dataGridViewImageTypes.TabIndex = 0;
+            // 
+            // tabPageImages
+            // 
+            this.tabPageImages.Controls.Add(this.dataGridViewImages);
+            this.tabPageImages.Location = new System.Drawing.Point(4, 25);
+            this.tabPageImages.Name = "tabPageImages";
+            this.tabPageImages.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageImages.Size = new System.Drawing.Size(1176, 310);
+            this.tabPageImages.TabIndex = 1;
+            this.tabPageImages.Text = "Images";
+            this.tabPageImages.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewImages
+            // 
+            this.dataGridViewImages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewImages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewImages.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewImages.Name = "dataGridViewImages";
+            this.dataGridViewImages.Size = new System.Drawing.Size(1170, 304);
+            this.dataGridViewImages.TabIndex = 1;
+            // 
+            // tabPageProjects
+            // 
+            this.tabPageProjects.Controls.Add(this.dataGridViewProjects);
+            this.tabPageProjects.Location = new System.Drawing.Point(4, 25);
+            this.tabPageProjects.Name = "tabPageProjects";
+            this.tabPageProjects.Size = new System.Drawing.Size(1176, 310);
+            this.tabPageProjects.TabIndex = 2;
+            this.tabPageProjects.Text = "Projects";
+            this.tabPageProjects.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewProjects
+            // 
+            this.dataGridViewProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewProjects.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewProjects.Name = "dataGridViewProjects";
+            this.dataGridViewProjects.Size = new System.Drawing.Size(1176, 310);
+            this.dataGridViewProjects.TabIndex = 1;
+            // 
+            // tabPageSessions
+            // 
+            this.tabPageSessions.Controls.Add(this.dataGridViewSessions);
+            this.tabPageSessions.Location = new System.Drawing.Point(4, 25);
+            this.tabPageSessions.Name = "tabPageSessions";
+            this.tabPageSessions.Size = new System.Drawing.Size(1176, 310);
+            this.tabPageSessions.TabIndex = 3;
+            this.tabPageSessions.Text = "Sessions";
+            this.tabPageSessions.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewSessions
+            // 
+            this.dataGridViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSessions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSessions.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewSessions.Name = "dataGridViewSessions";
+            this.dataGridViewSessions.Size = new System.Drawing.Size(1176, 310);
+            this.dataGridViewSessions.TabIndex = 1;
+            // 
+            // openFileDialogAddNewFiles
+            // 
+            this.openFileDialogAddNewFiles.FileName = "openFileDialog1";
+            // 
             // FormCatalogFunctionsDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 414);
+            this.ClientSize = new System.Drawing.Size(1184, 819);
             this.Controls.Add(this.tabControlViewData);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;

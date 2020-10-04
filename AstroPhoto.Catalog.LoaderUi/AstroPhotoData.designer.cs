@@ -105,6 +105,14 @@ namespace AstroPhoto.Catalog.LoaderUi
 				return this.GetTable<Session>();
 			}
 		}
+		
+		public System.Data.Linq.Table<ImagesView> ImagesViews
+		{
+			get
+			{
+				return this.GetTable<ImagesView>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Images")]
@@ -823,6 +831,123 @@ namespace AstroPhoto.Catalog.LoaderUi
 		{
 			this.SendPropertyChanging();
 			entity.Session = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_Image_Deref")]
+	public partial class ImagesView
+	{
+		
+		private int _ImageId;
+		
+		private string _FilePath;
+		
+		private System.DateTime _DateAdded;
+		
+		private string _Name;
+		
+		private string _Expr1;
+		
+		private string _SessionLabel;
+		
+		public ImagesView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageId", DbType="Int NOT NULL")]
+		public int ImageId
+		{
+			get
+			{
+				return this._ImageId;
+			}
+			set
+			{
+				if ((this._ImageId != value))
+				{
+					this._ImageId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePath", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string FilePath
+		{
+			get
+			{
+				return this._FilePath;
+			}
+			set
+			{
+				if ((this._FilePath != value))
+				{
+					this._FilePath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateAdded", DbType="DateTime NOT NULL")]
+		public System.DateTime DateAdded
+		{
+			get
+			{
+				return this._DateAdded;
+			}
+			set
+			{
+				if ((this._DateAdded != value))
+				{
+					this._DateAdded = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expr1", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Expr1
+		{
+			get
+			{
+				return this._Expr1;
+			}
+			set
+			{
+				if ((this._Expr1 != value))
+				{
+					this._Expr1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SessionLabel", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SessionLabel
+		{
+			get
+			{
+				return this._SessionLabel;
+			}
+			set
+			{
+				if ((this._SessionLabel != value))
+				{
+					this._SessionLabel = value;
+				}
+			}
 		}
 	}
 }
